@@ -3,11 +3,16 @@ package ex02.method;
 import java.util.Scanner;
 
 public class ExamList {
-	Exam[] exams;
-	int current;
+	private Exam[] exams;
+    private int current;
 	
+    // 생성자 
+	public ExamList() {
+		exams = new Exam[3];
+		current = 0;
+	}
 	
-	int inputMenu() {
+	public int inputMenu() {
 		Scanner scan = new Scanner(System.in);
 		
 		// 메인 메뉴 부분
@@ -22,10 +27,9 @@ public class ExamList {
 		int menu = scan.nextInt();
 		
 		return menu;
-		
 	}
 
-	void inputList() {
+	public void inputList() {
 		Scanner scan = new Scanner(System.in);
 		
 		// 성적 입력 부분
@@ -89,16 +93,15 @@ public class ExamList {
 			
 			exams[current] = exam;
 			current++;
-		
 	}
 
 
 	// 오버로딩함수 코드 집중 화  
-	void printList() {
+	public void printList() {
 		this.printList(this.current);
 	}
 	
-	void printList(int size) {
+	public void printList(int size) {
 		// 성적 출력 부분 
 		System.out.println("┌────────────────────────────────┐");
 		System.out.println("│          성적 출력             │");
@@ -126,12 +129,5 @@ public class ExamList {
 			System.out.printf("평균 : %6.2f\n", avg);
 			System.out.println("─────────────────────────────────");
 		}
-		
-	}
-
-
-	public void init() {
-		exams = new Exam[3];
-		current = 0;
 	}
 }

@@ -5,8 +5,6 @@ public class Program {
 	public static void main(String[] args) {
 		
 		ExamList list = new ExamList();
-		list.init();
-		
 		
 		int menu;
 		int size = 2;
