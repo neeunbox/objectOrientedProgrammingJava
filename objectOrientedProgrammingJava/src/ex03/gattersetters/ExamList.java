@@ -1,4 +1,4 @@
-package ex02.method;
+package ex03.gattersetters;
 
 import java.util.Scanner;
 
@@ -44,6 +44,7 @@ public class ExamList {
 		System.out.println("│          성적 입력             │");
 		System.out.println("└────────────────────────────────┘");
 		
+			
 		int kor, eng, math;
 		
 			do{
@@ -51,7 +52,7 @@ public class ExamList {
 				kor = scan.nextInt();
 			
 				if (kor<0 || 100<kor) {					
-					System.out.println("성정범위(0~100)을 벗어났습니다.");
+					System.out.println("성적범위(0~100)을 벗어났습니다.");
 				}
 				
 			}while(kor<0 || 100<kor);
@@ -61,7 +62,7 @@ public class ExamList {
 				eng = scan.nextInt();
 			
 				if (eng<0 || 100<eng) {					
-					System.out.println("성정범위(0~100)을 벗어났습니다.");
+					System.out.println("성적범위(0~100)을 벗어났습니다.");
 				}
 				
 			}while(eng<0 || 100<eng);
@@ -71,16 +72,20 @@ public class ExamList {
 				math = scan.nextInt();
 			
 				if (math<0 || 100<math) {					
-					System.out.println("성정범위(0~100)을 벗어났습니다.");
+					System.out.println("성적범위(0~100)을 벗어났습니다.");
 				}
 				
 			}while(math<0 || 100<math);
 			
+			/*
 			Exam exam = new Exam();
+			exam.setKor(kor);
+			exam.setEng(eng);
+			exam.setMath(math);
+			*/
 			
-			exam.kor = kor;
-			exam.eng = eng;
-			exam.math = math;
+			// 생성자 초기화 사용
+			Exam exam = new Exam(kor, eng, math);
 			
 			
 			// 1.배열의 크기가 capacity 와 같은가?
@@ -120,13 +125,16 @@ public class ExamList {
 			
 			Exam exam = exams[i];
 		
-			int kor = exam.kor;
-			int eng = exam.eng;
-			int math = exam.math;
+			int kor = exam.getKor();
+			int eng = exam.getEng();
+			int math = exam.getMath();
 			
-			int total = exam.kor + exam.eng + exam.math;
-			float avg = total / 3.0f;
+			// getTotal 사용
+			int total = exam.getTotal();
 			
+			// getAvg 사용
+			float avg = exam.getAvg();
+					
 			System.out.printf("국어 : %d\n", kor);
 			System.out.printf("영어 : %d\n", eng);
 			System.out.printf("수학 : %d\n", math);
