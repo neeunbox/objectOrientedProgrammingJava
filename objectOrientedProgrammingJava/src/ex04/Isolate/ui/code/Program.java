@@ -1,6 +1,4 @@
-package ex04.ex03.Isolate.ui.code;
-
-import java.util.Scanner;
+package ex04.Isolate.ui.code;
 
 public class Program {
 

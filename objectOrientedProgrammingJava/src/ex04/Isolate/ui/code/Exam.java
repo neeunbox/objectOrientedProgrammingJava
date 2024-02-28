@@ -1,4 +1,4 @@
-package ex04.ex03.Isolate.ui.code;
+package ex04.Isolate.ui.code;
 
 public class Exam {
 	private int kor;
